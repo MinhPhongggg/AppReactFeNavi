@@ -1,7 +1,7 @@
 import axios from "@/utils/axios.customize";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Platform } from "react-native";
-
+import { IUserAuth } from "@/context/app.context";
 export const registerAPI = (
   userName: string,
   email: string,

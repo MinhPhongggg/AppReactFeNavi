@@ -1,7 +1,7 @@
 import { APP_COLOR } from "@/utils/constant";
 import { Tabs } from "expo-router";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, Ionicons } from "@expo/vector-icons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { Octicons } from "@expo/vector-icons";
 const TabLayout = () => {
@@ -10,6 +10,15 @@ const TabLayout = () => {
       return (
         <MaterialCommunityIcons
           name="food-fork-drink"
+          size={size}
+          color={focused ? APP_COLOR.ORANGE : APP_COLOR.GREY}
+        />
+      );
+    }
+    if (routeName === "groups") {
+      return (
+        <Ionicons
+          name={focused ? "people" : "people-outline"}
           size={size}
           color={focused ? APP_COLOR.ORANGE : APP_COLOR.GREY}
         />
@@ -73,6 +82,12 @@ const TabLayout = () => {
         }}
       />
       <Tabs.Screen
+        name="groups"
+        options={{
+          title: "Nhóm",
+        }}
+      />
+      <Tabs.Screen
         name="order"
         options={{
           title: "order",
@@ -87,13 +102,13 @@ const TabLayout = () => {
       <Tabs.Screen
         name="notification"
         options={{
-          title: "notification",
+          title: "Thông báo",
         }}
       />
       <Tabs.Screen
         name="account"
         options={{
-          title: "account",
+          title: "Tài khoản",
         }}
       />
     </Tabs>
